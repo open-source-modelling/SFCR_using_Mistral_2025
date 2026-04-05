@@ -2,7 +2,7 @@ import pandas as pd
 
 from functions import run_company_S_02_01_02
 
-api_key = "upP6NWLMzeR4oRGPHkRUt00sCxffXmS5"
+api_key = "[YOUR API KEY]"
 
 master_list_ita = pd.read_excel("master_list.xlsx", sheet_name = "ITALY_2024", header=0, index_col=0)
 
