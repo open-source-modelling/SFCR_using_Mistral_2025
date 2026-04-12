@@ -2,9 +2,9 @@ import pandas as pd
 
 from functions import run_company_S_02_01_02, run_company_S_23_01_01
 
-api_key = "MarK4Hz2nWqZKNCItzeJtpSR6e6LBpwH"
+api_key = "[YOUR API KEY HERE]"
 
-master_list_ita = pd.read_excel("master_list_only_23.xlsx", sheet_name = "ITALY_2025", header=0, index_col=0)
+master_list_ita = pd.read_excel("master_list_partial.xlsx", sheet_name = "ITALY_2025", header=0, index_col=0)
 
 S020102 = None
 S230101 = None
