@@ -246,19 +246,6 @@ class LiabilityBalanceSheetLifeIta(BaseModel):
     R0710: float = Field(..., description="Value in row with description Migliore stima and code R0710")
     R0720: float = Field(..., description="Value in row with description Margine di rischio and code R0720")
 
-class LiabilityBalanceSheetPayablesIta(BaseModel):
-    """Table S.02.01.02 fields values.Only values in column C0010."""
-    
-    R0820: float = Field(..., description="Value in row with description Debiti assicurativi e verso intermediari and code R0820")
-    R0830: float = Field(..., description="Value in row with description Debiti riassicurativi and code R0830")
-    R0840: float = Field(..., description="Value in row with description Debiti (commerciali, non assicurativi) and code R0840")
-    R0850: float = Field(..., description="Value in row with description Passività subordinate and code R0850")
-    R0860: float = Field(..., description="Value in row with description Passività subordinate non incluse nei fondi propri di base and code R0860")
-    R0870: float = Field(..., description="Value in row with description Passività subordinate incluse nei fondi propri di base and code R0870")
-    R0880: float = Field(..., description="Value in row with description Tutte le altre passività non segnalate altrove and code R0880")
-    R0890: float = Field(..., description="Value in row with code R0890")
-    R0900: float = Field(..., description="Value in row with description Totale delle passività and code R0900")
-    R1000: float = Field(..., description="Value in row with description Eccedenza delle attività rispetto alle passività and code R1000")
 
 # Schema for the S.02.01.02 asset table
 class LiabilityBalanceSheetDebtIta(BaseModel):
@@ -273,3 +260,17 @@ class LiabilityBalanceSheetDebtIta(BaseModel):
     R0790: float = Field(..., description="Value in row with description Derivati and code R0790")
     R0800: float = Field(..., description="Value in row with description Debiti verso enti creditizi and code R0800")
     R0810: float = Field(..., description="Value in row with description Passività finanziarie diverse da debiti verso enti creditizi and code R0810")
+
+class LiabilityBalanceSheetPayablesIta(BaseModel):
+    """Table S.02.01.02 fields values.Only values in column C0010."""
+    
+    R0820: float = Field(..., description="Value in row with description Debiti assicurativi e verso intermediari and code R0820")
+    R0830: float = Field(..., description="Value in row with description Debiti riassicurativi and code R0830")
+    R0840: float = Field(..., description="Value in row with description Debiti (commerciali, non assicurativi) and code R0840")
+    R0850: float = Field(..., description="Value in row with description Passività subordinate and code R0850")
+    R0860: float = Field(..., description="Value in row with description Passività subordinate non incluse nei fondi propri di base and code R0860")
+    R0870: float = Field(..., description="Value in row with description Passività subordinate incluse nei fondi propri di base and code R0870")
+    R0880: float = Field(..., description="Value in row with description Tutte le altre passività non segnalate altrove and code R0880")
+    R0890: float = Field(..., description="Value in row with code R0890")
+    R0900: float = Field(..., description="Value in row with description Totale delle passività and code R0900")
+    R1000: float = Field(..., description="Value in row with description Eccedenza delle attività rispetto alle passività and code R1000")
