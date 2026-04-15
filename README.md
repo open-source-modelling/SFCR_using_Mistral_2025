@@ -1,4 +1,4 @@
-# SFCR S.02.01.02 Extraction – Italian Life Insurance Market
+# SFCR Extraction – Italian Life Insurance Market
 
 ## Overview
 This project extracts and structures Solvency and Financial Condition Report (SFCR) data, specifically Table S.02.01.02, for selected life insurance companies operating in Italy.
