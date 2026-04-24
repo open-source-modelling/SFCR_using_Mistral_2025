@@ -25,6 +25,7 @@ The original implementation was developed in a Jupyter Notebook and is being ref
  - UniCredit Allianz Vita S.p.A.
  - Zurich Investments Life S.p.A.
  - UniCredit Life Insurance S.p.A. (CNP UniCredit Vita S.p.A.)
+ - Athora Italia S.p.A.
 
 
 ## Contact
