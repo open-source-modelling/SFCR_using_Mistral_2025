@@ -2,7 +2,6 @@
 
 ## Overview
 This project extracts and structures Solvency and Financial Condition Report (SFCR) data, specifically tables S.02.01.02 and S.23.01.01, for selected life insurance companies operating in Italy.
-The original implementation was developed in a Jupyter Notebook and is being refactored into a modular, Python codebase.
 
 ## Companies in Scope
 
