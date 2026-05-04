@@ -9,7 +9,7 @@ from mistralai.extra import response_format_from_pydantic_model
 from pydantic import BaseModel
 from S020102_classes import AssetBalanceSheetAssets, AssetBalanceSheetEquityInvestments, AssetBalanceSheetBondInvestments, AssetBalanceSheetLoanInvestments, AssetBalanceSheetLoansAndRecoverables, AssetBalanceSheetRest, AssetBalanceSheetAssetsIta, AssetBalanceSheetEquityInvestmentsIta, AssetBalanceSheetBondInvestmentsIta, AssetBalanceSheetLoanInvestmentsIta, AssetBalanceSheetLoansAndRecoverablesIta, AssetBalanceSheetRestIta, LiabilityBalanceSheetNonLife, LiabilityBalanceSheetHealth, LiabilityBalanceSheetLife, LiabilityBalanceSheetDebt, LiabilityBalanceSheetPayables, LiabilityBalanceSheetNonLifeIta, LiabilityBalanceSheetHealthIta, LiabilityBalanceSheetLifeIta, LiabilityBalanceSheetDebtIta, LiabilityBalanceSheetPayablesIta
 from S230101_classes import OwnFundsBasic, OwnFundsDeductions, OwnFundsAuxiliaryOwnFunds,OwnFundsBasicIta, OwnFundsDeductionsIta, OwnFundsAuxiliaryOwnFundsIta, OwnFundsRest, OwnFundsRestIta
-
+from S250121_classes import SCRRisk, SCRRiskIta
 def extract_page(input_pdf_path, output_pdf_path, page_number, password: str = ""):
     pdf_reader = PdfReader(input_pdf_path)
     pdf_writer = PdfWriter()
@@ -274,13 +274,11 @@ def run_company_S_02_01_02(company:str,  api_key:str, master_list:pd.DataFrame)-
 
     return pd.concat([out_A, out_L], axis=0)    
 
-
 def run_S230101_first_half(company:str, unique_id:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
     
     pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
     extract_page(pdf_path, output_pdf_path, page_number)
-
-    
+   
     client = Mistral(api_key=api_key)
     class_output = OwnFundsBasic
     annotations_response = call_mistral(client=client, output_pdf_path = output_pdf_path, pydantic_model = class_output)
@@ -302,13 +300,11 @@ def run_S230101_first_half(company:str, unique_id:str, api_key:str, master_list:
     
     return output
 
-
 def run_S230101_first_half_ita(company:str, unique_id:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
     
     pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
     extract_page(pdf_path, output_pdf_path, page_number)
-
-    
+  
     client = Mistral(api_key=api_key)
     class_output = OwnFundsBasicIta
     annotations_response = call_mistral(client=client, output_pdf_path = output_pdf_path, pydantic_model = class_output)
@@ -330,12 +326,10 @@ def run_S230101_first_half_ita(company:str, unique_id:str, api_key:str, master_l
     
     return output
 
-
 def run_S230101_second_half(company:str, unique_id:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
     
     pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
     extract_page(pdf_path, output_pdf_path, page_number)
-
 
     client = Mistral(api_key=api_key)
     class_output = OwnFundsRest
@@ -352,7 +346,6 @@ def run_S230101_second_half_ita(company:str, unique_id:str, api_key:str, master_
     pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
     extract_page(pdf_path, output_pdf_path, page_number)
 
-
     client = Mistral(api_key=api_key)
     class_output = OwnFundsRestIta
     annotations_response = call_mistral(client=client, output_pdf_path = output_pdf_path, pydantic_model = class_output)
@@ -363,6 +356,50 @@ def run_S230101_second_half_ita(company:str, unique_id:str, api_key:str, master_
     
     return output
 
+def run_S250121(company:str, unique_id:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
+    
+    pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
+    extract_page(pdf_path, output_pdf_path, page_number)
+
+    
+    client = Mistral(api_key=api_key)
+    class_output = SCRRisk
+    annotations_response = call_mistral(client=client, output_pdf_path = output_pdf_path, pydantic_model = class_output)
+    extracted_data = class_output(**json.loads(annotations_response.document_annotation))
+    output = extracted_to_df(extracted_data, company)
+    
+    output.to_csv(output_final_path)
+    
+    return output
+
+def run_S250121_ita(company:str, unique_id:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
+    
+    pdf_path, page_number, output_pdf_path, output_final_path, table_type =  extract_paths(master_list, unique_id)
+    extract_page(pdf_path, output_pdf_path, page_number)
+
+    client = Mistral(api_key=api_key)
+    class_output = SCRRiskIta
+    annotations_response = call_mistral(client=client, output_pdf_path = output_pdf_path, pydantic_model = class_output)
+    extracted_data = class_output(**json.loads(annotations_response.document_annotation))
+    output = extracted_to_df(extracted_data, company)
+    
+    output.to_csv(output_final_path)
+    
+    return output
+
+def run_company_S_25_01_21(company:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
+    
+    table = "S_25_01_21"
+    relevant_rows = master_list.loc[(master_list.loc[:,"company"] == company) & (master_list.loc[:,"table_category"] == table),:]
+    # If the relevant rows are empty, return an empty dataframe
+    if relevant_rows.empty:
+        return pd.DataFrame()
+    for id in relevant_rows.index:    
+        if relevant_rows.loc[id,"type"] == "B":
+            out = run_S250121(company, id, api_key, master_list)
+        elif relevant_rows.loc[id,"type"] == "B_ITA":
+            out = run_S250121_ita(company, id, api_key, master_list)
+    return out    
 
 def run_company_S_23_01_01(company:str, api_key:str, master_list:pd.DataFrame)->pd.DataFrame:
     
