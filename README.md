@@ -1,30 +1,68 @@
-# SFCR Extraction – Italian Life Insurance Market
+# SFCR Table Extraction - Italian Life Insurance Market
 
 ## Overview
-This project extracts and structures Solvency and Financial Condition Report (SFCR) data, specifically tables S.02.01.02, S.25.01.21 and S.23.01.01, for selected life insurance companies operating in Italy.
+This project extracts and structures Solvency and Financial Condition Report (SFCR) data from PDFs using Mistral OCR and Pydantic schemas.
+
+Current table categories processed by `main.py`:
+- `S_02_01_02`
+- `S_23_01_01`
+- `S_25_01_21`
+
+The original implementation was developed in Jupyter Notebook and is being incrementally refactored into a modular Python codebase.
+Core Python source files are organized under `Code/`.
+
+## Quick start
+
+### 1) Create and activate a virtual environment
+Windows (PowerShell):
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 2) Install dependencies
+```powershell
+pip install -r requirements.txt
+```
+
+### 3) Set API key
+`main.py` expects the Mistral key in an environment variable:
+```powershell
+$env:MISTRAL_API_KEY="your_api_key_here"
+```
+
+### 4) Prepare inputs
+- Put source PDFs in `Input/`
+- Ensure `master_list_partial.csv` exists in the project root
+
+### 5) Run the pipeline
+```powershell
+python Code/main.py
+```
+
+Final aggregated tables are written to `Output_aggregated/`.
 
 ## Companies in Scope
 
- 1) Credemvita S.p.A.
- 2) AXA MPS Assicurazioni Vita
- 3) CRÈDIT AGRICOLE VITA
- 4) Società Reale Mutua di Assicurazioni
- 5) Cardif Vita S.p.A.
- 6) MEDIOLANUM VITA S.p.A.
- 7) Generali Italia S.p.A.
- 8) Banco BPM Vita S.p.A.
- 9) HDI ASSICURAZIONI S.p.A.
- 10) Gruppo Assicurativo Poste Vita
- 11) FIDEURAM VITA S.P.A.
- 12) CNP Vita Assicura S.p.A.
- 13) ITAS VITA
- 14) Helvetia Vita S.p.A.
- 15) Vittoria Assicurazioni S.p.A.
- 16) GROUPAMA ASSICURAZIONI S.P.A.
- 17) UniCredit Allianz Vita S.p.A.
- 18) Zurich Investments Life S.p.A.
- 19) UniCredit Life Insurance S.p.A. (CNP UniCredit Vita S.p.A.)
- 20) Athora Italia S.p.A.
+ - Credemvita S.p.A.
+ - AXA MPS Assicurazioni Vita
+ - CRÈDIT AGRICOLE VITA
+ - Società Reale Mutua di Assicurazioni
+ - Cardif Vita S.p.A.
+ - MEDIOLANUM VITA S.p.A.
+ - Generali Italia S.p.A.
+ - Banco BPM Vita S.p.A.
+ - HDI ASSICURAZIONI S.p.A.
+ - Gruppo Assicurativo Poste Vita
+ - FIDEURAM VITA S.P.A.
+ - CNP Vita Assicura S.p.A.
+ - ITAS VITA
+ - Helvetia Vita S.p.A.
+ - Vittoria Assicurazioni S.p.A.
+ - GROUPAMA ASSICURAZIONI S.P.A.
+ - UniCredit Allianz Vita S.p.A.
+ - Zurich Investments Life S.p.A.
+
 
 
 ## Contact
