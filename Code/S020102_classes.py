@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, first 5 values #####
 class AssetBalanceSheetAssets(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010"""
 
@@ -10,7 +10,7 @@ class AssetBalanceSheetAssets(BaseModel):
     R0050: float = Field(..., description="Number in row with description Pension benefit surplus and code R0050")
     R0060: float = Field(..., description="Number in row with description Property, plant & equipment held for own use and code R0060")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R0070 to R0120 #####
 class AssetBalanceSheetEquityInvestments(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010"""
 
@@ -21,7 +21,7 @@ class AssetBalanceSheetEquityInvestments(BaseModel):
     R0110: float = Field(..., description="Number in row with description Equities - listed and code R0110")
     R0120: float = Field(..., description="Number in row with description Equities - unlisted and code R0120")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R0130 to R0160 #####
 class AssetBalanceSheetBondInvestments(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
 
@@ -30,7 +30,7 @@ class AssetBalanceSheetBondInvestments(BaseModel):
     R0150: float = Field(..., description="Number in row with description Corporate Bonds and code R0150")
     R0160: float = Field(..., description="Number in row with description Structured notes and code R0160")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values R0170 to R0220 #####
 class AssetBalanceSheetLoanInvestments(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
     
@@ -41,8 +41,7 @@ class AssetBalanceSheetLoanInvestments(BaseModel):
     R0210: float = Field(..., description="Number in row with description Other investments and code R0210")
     R0220: float = Field(..., description="Number in row with description Assets held for index-linked and unit-linked contracts and code R0220")
 
-
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values R0230 to R0340 #####
 class AssetBalanceSheetLoansAndRecoverables(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
     
@@ -59,7 +58,7 @@ class AssetBalanceSheetLoansAndRecoverables(BaseModel):
     R0330: float = Field(..., description="Value in row with description Life excluding health and index-linked and unit-linked and code R0330")
     R0340: float = Field(..., description="Value in row with description Life index-linked and unit-linked and code R0340")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R350 to R0500 #####
 class AssetBalanceSheetRest(BaseModel):
     """Table S.02.01.02 fields values. Only values in column C0010."""
     
@@ -73,7 +72,7 @@ class AssetBalanceSheetRest(BaseModel):
     R0420: float = Field(..., description="Value in row with description Any other assets, not elsewhere shown and code R0420")
     R0500: float = Field(..., description="Value in row with description Total assets and code R0500")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0510 to R0550 #####
 class LiabilityBalanceSheetNonLife(BaseModel):
     """Table S.02.01.02 fields values associated with non-life technical provisions. Only values in column C0010."""
 
@@ -83,6 +82,7 @@ class LiabilityBalanceSheetNonLife(BaseModel):
     R0540: float = Field(..., description="Value in row with description Best Estimate and code R0540")
     R0550: float = Field(..., description="Value in row with description Risk margin and code R0550")
 
+##### Schema for the S.02.01.02 liability table, values R0560 to R0590 #####
 class LiabilityBalanceSheetHealth(BaseModel):    
     """Table S.02.01.02 fields values associated with health technical provisions. Only values in column C0010."""
     
@@ -91,7 +91,7 @@ class LiabilityBalanceSheetHealth(BaseModel):
     R0580: float = Field(..., description="Value in row with description Best Estimate and code R0580")
     R0590: float = Field(..., description="Value in row with description Risk margin and code R0590")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0600 to R0650 #####
 class LiabilityBalanceSheetLife(BaseModel):
     """Table S.02.01.02 fields values associated with Life provisions. Only values in column C0010."""
     
@@ -109,7 +109,7 @@ class LiabilityBalanceSheetLife(BaseModel):
     R0710: float = Field(..., description="Value in row with description Best Estimate and code R0710")
     R0720: float = Field(..., description="Value in row with description Risk margin and code R0720")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0730 to R0810 #####
 class LiabilityBalanceSheetDebt(BaseModel):
     """Table S.02.01.02 fields values. Only values in column C0010."""
     
@@ -123,7 +123,7 @@ class LiabilityBalanceSheetDebt(BaseModel):
     R0800: float = Field(..., description="Value in row with description Debts owed to credit institutions and code R0800")
     R0810: float = Field(..., description="Value in row with description Financial liabilities other than debts owed to credit institutions and code R0810")
 
-
+##### Schema for the S.02.01.02 liability table, values R0820 to R1000 #####
 class LiabilityBalanceSheetPayables(BaseModel):
     """Table S.02.01.02 fields values.Only values in column C0010."""
     
@@ -138,7 +138,7 @@ class LiabilityBalanceSheetPayables(BaseModel):
     R0900: float = Field(..., description="Value in row with description Total liabilities and code R0900")
     R1000: float = Field(..., description="Value in row with description Excess of assets over liabilities and code R1000")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, first 5 values, if table in Italian #####
 class AssetBalanceSheetAssetsIta(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010"""
     
@@ -148,7 +148,7 @@ class AssetBalanceSheetAssetsIta(BaseModel):
     R0050: float = Field(..., description="Number in row with description Utili da prestazioni pensionistiche and code R0050")
     R0060: float = Field(..., description="Number in row with description Immobili, impianti e attrezzature posseduti per uso proprio and code R0060")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R0070 to R0120, if table in Italian #####
 class AssetBalanceSheetEquityInvestmentsIta(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010"""
     
@@ -159,7 +159,7 @@ class AssetBalanceSheetEquityInvestmentsIta(BaseModel):
     R0110: float = Field(..., description="Number in row with description Strumenti di capitale - Quotati and code R0110")
     R0120: float = Field(..., description="Number in row with description Strumenti di capitale - Non quotati and code R0120")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R0130 to R0160, if table in Italian #####
 class AssetBalanceSheetBondInvestmentsIta(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
     
@@ -168,7 +168,7 @@ class AssetBalanceSheetBondInvestmentsIta(BaseModel):
     R0150: float = Field(..., description="Number in row with description Obbligazioni societarie and code R0150")
     R0160: float = Field(..., description="Number in row with description Obbligazioni strutturate and code R0160")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values R0170 to R0220, if table in Italian #####
 class AssetBalanceSheetLoanInvestmentsIta(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
     
@@ -179,7 +179,7 @@ class AssetBalanceSheetLoanInvestmentsIta(BaseModel):
     R0210: float = Field(..., description="Number in row with description Altri investimenti and code R0210")
     R0220: float = Field(..., description="Number in row with description Attività detenute per contratti collegati a un indice e collegati a quote and code R0220")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values R0230 to R0340, if table in Italian #####
 class AssetBalanceSheetLoansAndRecoverablesIta(BaseModel):
     """Table of selected field values in table S.02.01.02. Only values in column C0010."""
     
@@ -196,7 +196,7 @@ class AssetBalanceSheetLoansAndRecoverablesIta(BaseModel):
     R0330: float = Field(..., description="Value in row with description Vita, escluse malattia, collegata a un indice e collegata a quote and code R0330")
     R0340: float = Field(..., description="Value in row with description Vita collegata a un indice e collegata a quote and code R0340")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 asset table, values from R350 to R0500, if table in Italian #####
 class AssetBalanceSheetRestIta(BaseModel):
     """Table S.02.01.02 fields values. Only values in column C0010."""
     
@@ -210,7 +210,7 @@ class AssetBalanceSheetRestIta(BaseModel):
     R0420: float = Field(..., description="Value in row with description Tutte le altre attività non indicate altrove and code R0420")
     R0500: float = Field(..., description="Value in row with description Totale delle attività and code R0500")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0510 to R0550, if table in Italian #####
 class LiabilityBalanceSheetNonLifeIta(BaseModel):
     """Table S.02.01.02 fields values associated with non-life technical provisions. Only values in column C0010."""
 
@@ -220,6 +220,7 @@ class LiabilityBalanceSheetNonLifeIta(BaseModel):
     R0540: float = Field(..., description="Value in row with description Migliore stima and code R0540")
     R0550: float = Field(..., description="Value in row with description Margine di rischio and code R0550")
 
+##### Schema for the S.02.01.02 liability table, values R0560 to R0590, if table in Italian #####
 class LiabilityBalanceSheetHealthIta(BaseModel):    
     """Table S.02.01.02 fields values associated with health technical provisions. Only values in column C0010."""
     
@@ -228,7 +229,7 @@ class LiabilityBalanceSheetHealthIta(BaseModel):
     R0580: float = Field(..., description="Value in row with description Migliore stima and code R0580")
     R0590: float = Field(..., description="Value in row with description Margine di rischio and code R0590")
 
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0600 to R0720, if table in Italian #####
 class LiabilityBalanceSheetLifeIta(BaseModel):
     """Table S.02.01.02 fields values associated with Life provisions. Only values in column C0010."""
     
@@ -246,8 +247,7 @@ class LiabilityBalanceSheetLifeIta(BaseModel):
     R0710: float = Field(..., description="Value in row with description Migliore stima and code R0710")
     R0720: float = Field(..., description="Value in row with description Margine di rischio and code R0720")
 
-
-# Schema for the S.02.01.02 asset table
+##### Schema for the S.02.01.02 liability table, values R0730 to R0810, if table in Italian #####
 class LiabilityBalanceSheetDebtIta(BaseModel):
     """Table S.02.01.02 fields values. Only values in column C0010."""
 
@@ -261,6 +261,7 @@ class LiabilityBalanceSheetDebtIta(BaseModel):
     R0800: float = Field(..., description="Value in row with description Debiti verso enti creditizi and code R0800")
     R0810: float = Field(..., description="Value in row with description Passività finanziarie diverse da debiti verso enti creditizi and code R0810")
 
+##### Schema for the S.02.01.02 liability table, values R082 to R1000, if table in Italian #####
 class LiabilityBalanceSheetPayablesIta(BaseModel):
     """Table S.02.01.02 fields values.Only values in column C0010."""
     

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-##### Schema for the S.23.01.01 table ######
+##### Schema for the S.23.01.01 Own Funds table, values R0010 to R0180 #####
 class OwnFundsBasic(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -16,6 +16,7 @@ class OwnFundsBasic(BaseModel):
     R0160: float = Field(..., description="Value in row with description An amount equal to the value of net deferred tax assets and code R0160")
     R0180: float = Field(..., description="Value in row with description Other own fund items approved by the supervisory authority as basic own funds not specified above and code R0180")
 
+##### Schema for the S.23.01.01 Own Funds table, values R0010 to R0180, if table in Italian #####
 class OwnFundsBasicIta(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -31,7 +32,7 @@ class OwnFundsBasicIta(BaseModel):
     R0160: float = Field(..., description="Value in row with description Importo pari al valore delle attività fiscali differite nette and code R0160")
     R0180: float = Field(..., description="Value in row with description Altri elementi dei fondi propri approvati dall'autorità di vigilanza come fondi propri di base non specificati in precedenza and code R0180")
 
-
+##### Schema for the S.23.01.01 Own Funds table, values R0220 to R0290 #####
 class OwnFundsDeductions(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -39,7 +40,7 @@ class OwnFundsDeductions(BaseModel):
     R0230: float = Field(..., description="Value in row with description Deductions for participations in financial and credit institutions and code R0230")
     R0290: float = Field(..., description="Value in row with description Total basic own funds after deductions and code R0290")
 
-
+##### Schema for the S.23.01.01 Own Funds table, values R0220 to R0290, if table in Italian #####
 class OwnFundsDeductionsIta(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -47,6 +48,7 @@ class OwnFundsDeductionsIta(BaseModel):
     R0230: float = Field(..., description="Value in row with description Deduzioni per partecipazioni in enti creditizi e finanziari and code R0230")
     R0290: float = Field(..., description="Value in row with description Totale dei fondi propri di base dopo le deduzioni and code R0290")
 
+##### Schema for the S.23.01.01 Own Funds table, values R0300 to R0400, if table in Italian #####
 class OwnFundsAuxiliaryOwnFunds(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -61,7 +63,7 @@ class OwnFundsAuxiliaryOwnFunds(BaseModel):
     R0390: float = Field(..., description="Value in row with description Other ancillary own funds and code R0390")
     R0400: float = Field(..., description="Value in row with description Total ancillary own fundsand code R0400")
 
-
+##### Schema for the S.23.01.01 Own Funds table, values R0300 to R0400 #####
 class OwnFundsAuxiliaryOwnFundsIta(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
