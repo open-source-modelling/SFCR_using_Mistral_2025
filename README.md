@@ -41,6 +41,7 @@ python Code/main.py
 ```
 
 Final aggregated tables are written to `Output_aggregated/`.
+Produced tables are then manually checked against the pdf-s and saved into `Final_output`
 
 ## Companies in Scope
 
@@ -64,7 +65,7 @@ Final aggregated tables are written to `Output_aggregated/`.
  - [Zurich Investments Life S.p.A.]
  - [UniCredit Life Insurance S.p.A.]
  - [Athora Italia S.p.A.]
-
+ - [Nobis Vita S.p.A.]
 ## Contact
 A version of this process is used by us to extract data for our actuarial models. One of the benefits of releasing our code is the feedback and improvement ideas. If you have any, you can contact us at gregor@osmodelling.com.
 
@@ -91,4 +92,4 @@ MIT license
 [Zurich Investments Life S.p.A.]:https://www.zurich.it/zurich-per-te/avvisi/sfcr-report
 [UniCredit Life Insurance S.p.A.]:https://www.unicreditlife.it/chisiamo/solvency
 [Athora Italia S.p.A.]:https://www.athora.it/chi-siamo/documenti-societari/
-
+[Nobis Vita S.p.A.]:https://corporate.axa.it/
