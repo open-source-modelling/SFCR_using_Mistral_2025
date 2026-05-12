@@ -2,6 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from typing import Callable
 from functions import run_company_S_02_01_02, run_company_S_23_01_01, run_company_S_25_01_21
 
 def _get_api_key() -> str:
@@ -10,7 +11,7 @@ def _get_api_key() -> str:
         raise ValueError("MISTRAL_API_KEY environment variable not set. Please set it before running.")
     return api_key
 
-def _run_table_for_companies(table: str, runner: function, companies: np.ndarray, api_key: str, master_list: pd.DataFrame) -> pd.DataFrame:
+def _run_table_for_companies(table: str, runner: Callable[[str, str, pd.DataFrame], pd.DataFrame], companies: np.ndarray, api_key: str, master_list: pd.DataFrame) -> pd.DataFrame:
     frames = []
     for company in companies:
         company_frame = runner(company = company, 
@@ -32,6 +33,7 @@ def main():
     project_dir = code_dir.parent
     output_dir = project_dir / "Output_aggregated"
     output_dir.mkdir(parents=True, exist_ok=True)
+    
 
     print(f"✓ Project directory set to: {project_dir}")
     print(f"✓ Output directory set to: {output_dir}")

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-##### Schema for the S.25.01.21 table ######
+##### Schema for the S.25.01.21 Solvency Capital Requirement – for undertakings on Standard Formula table. Values R0010 to R0100. ######
 class SCRRisk(BaseModel):
     """Table S.25.01.21 fields values. Only values in column C0110."""
 
@@ -13,7 +13,7 @@ class SCRRisk(BaseModel):
     R0070: float = Field(..., description="Value in row with description Intangible asset risk and code R0070")
     R0100: float = Field(..., description="Value in row with description Basic Solvency Capital Requirement and code R0100")
 
-##### Schema for the S.25.01.21 table ######
+##### Schema for the S.25.01.21 Solvency Capital Requirement – for undertakings on Standard Formula table. Values R0010 to R0100, if table in Italian ######
 class SCRRiskIta(BaseModel):
     """Table S.25.01.21 fields values. Only values in column C0110."""
 

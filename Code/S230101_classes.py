@@ -63,7 +63,7 @@ class OwnFundsAuxiliaryOwnFunds(BaseModel):
     R0390: float = Field(..., description="Value in row with description Other ancillary own funds and code R0390")
     R0400: float = Field(..., description="Value in row with description Total ancillary own fundsand code R0400")
 
-##### Schema for the S.23.01.01 Own Funds table, values R0300 to R0400 #####
+##### Schema for the S.23.01.01 Own Funds table, values R0300 to R0400, if table in Italian #####
 class OwnFundsAuxiliaryOwnFundsIta(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -78,7 +78,7 @@ class OwnFundsAuxiliaryOwnFundsIta(BaseModel):
     R0390: float = Field(..., description="Value in row with description Other ancillary own funds and code R0390")
     R0400: float = Field(..., description="Value in row with description Total ancillary own fundsand code R0400")
 
-
+##### Schema for the S.23.01.01 Own Funds table, values R0500 to R0640 #####
 class OwnFundsRest(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
@@ -91,7 +91,7 @@ class OwnFundsRest(BaseModel):
     R0620: float = Field(..., description="Value in row with description Ratio of Eligible own funds to SCR and code R0620")
     R0640: float = Field(..., description="Value in row with description Ratio of Eligible own funds to MCR and code R0640")
 
-
+##### Schema for the S.23.01.01 Own Funds table, values R0500 to R0640, if table in Italian #####
 class OwnFundsRestIta(BaseModel):
     """Table S.23.01.01 fields values. Only values in column C0010."""
 
