@@ -154,7 +154,7 @@ def ensure_validation_dir(project_dir: Path) -> Path:
 
 def save_validation_summary(summary: pd.DataFrame, project_dir: Path) -> Path:
     validation_dir = ensure_validation_dir(project_dir)
-    out_path = validation_dir / "validation_summary.csv"
+    out_path = validation_dir / "validation_summary_S230101.csv"
     summary.to_csv(out_path)
     return out_path
 
