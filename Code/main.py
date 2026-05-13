@@ -31,7 +31,7 @@ def _run_table_for_companies(table: str, runner: Callable[[str, str, pd.DataFram
 def main():
     code_dir = Path(__file__).resolve().parent
     project_dir = code_dir.parent
-    output_dir = project_dir / "Output_aggregated"
+    output_dir = project_dir / "Output"
     output_dir.mkdir(parents=True, exist_ok=True)
     
 
