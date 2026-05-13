@@ -40,8 +40,11 @@ $env:MISTRAL_API_KEY="your_api_key_here"
 python Code/main.py
 ```
 
-Final aggregated tables are written to `Output_aggregated/`.
-Produced tables are then manually checked against the pdf-s and saved into `Final_output`
+Final aggregated tables are written to `Output/`. 
+
+Produced tables are then manually checked against the pdf-s and saved into `output_final`.
+
+Note that previously the final folder was `Final_output`. Therefore for legacy reasons it is kept as a duplicate copy of `Output_final`.
 
 ## Companies in Scope
 
@@ -66,6 +69,7 @@ Produced tables are then manually checked against the pdf-s and saved into `Fina
  - [UniCredit Life Insurance S.p.A.]
  - [Athora Italia S.p.A.]
  - [Nobis Vita S.p.A.]
+
 ## Contact
 A version of this process is used by us to extract data for our actuarial models. One of the benefits of releasing our code is the feedback and improvement ideas. If you have any, you can contact us at gregor@osmodelling.com.
 
