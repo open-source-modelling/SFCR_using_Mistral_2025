@@ -8,8 +8,19 @@ Current table categories processed by `main.py`:
 - `S_23_01_01 – Own funds`
 - `S_25_01_21 – Solvency Capital Requirement – for undertakings on Standard Formula`
 
-The original implementation was developed in Jupyter Notebook and is being incrementally refactored into a modular Python codebase.
-Core Python source files are organized under `Code/`.
+The original implementation was developed in Jupyter Notebook and is being incrementally refactored into a modular Python codebase. Core Python source files are organized under `Code/`.
+
+## Pipeline
+
+| Phase | What happens | Folder / script |
+|-------|----------------|-----------------|
+| 1. Catalog | Map companies, PDFs, and page numbers | `master_list_partial.csv`, `Input/` |
+| 2. Extract | Isolate table pages and run Mistral OCR | `Code/main.py` → `Output/`, `Single_pdf/` |
+| 3. Manual review | Spot-check OCR output against source PDFs | `Output/` → `Output_final/` |
+| 4. Cross-validate | Run internal consistency checks on corrected tables | `Code/run_cross_checks.py` → `Validation/` |
+| 5. Measure accuracy | Compare raw OCR output with corrected finals | `Code/compare_output_tables.py` |
+
+`Final_output/` is a legacy duplicate of `Output_final/` and is kept for backward compatibility.
 
 ## Quick start
 
@@ -35,16 +46,55 @@ $env:MISTRAL_API_KEY="your_api_key_here"
 - Put source PDFs in `Input/`
 - Ensure `master_list_partial.csv` exists in the project root
 
-### 5) Run the pipeline
+### 5) Run extraction
 ```powershell
 python Code/main.py
 ```
 
-Final aggregated tables are written to `Output/`. 
+Raw aggregated tables are written to `Output/`.
 
-Produced tables are then manually checked against the pdf-s and saved into `output_final`.
+### 6) Run cross-validation (after manual corrections in `Output_final/`)
+Run all table checks in one pass:
+```powershell
+python Code/run_cross_checks.py
+```
 
-Note that previously the final folder was `Final_output`. Therefore for legacy reasons it is kept as a duplicate copy of `Output_final`.
+Or run a single table:
+```powershell
+python Code/cross_check_S020102.py
+python Code/cross_check_S230101.py
+python Code/cross_check_S250121.py
+```
+
+Validation summaries are written to `Validation/validation_summary_*.csv`. Failed checks also produce per-company diagnostic CSVs in `Validation/`.
+
+### 7) Compare raw OCR output with corrected tables
+```powershell
+python Code/compare_output_tables.py
+```
+
+Use `--atol 1.5` to count near-matches as equal. Default is exact numeric match after parsing.
+
+## Validation results
+
+Cross-validation was run against the corrected tables in `Output_final/` (May 2026). All internal consistency checks passed for every company:
+
+| Table | Cross-check result |
+|-------|-------------------|
+| S.02.01.02 balance sheet | PASS (17 tests) |
+| S.23.01.01 own funds | PASS (4 tests) |
+| S.25.01.21 SCR standard formula | PASS (1 test) |
+
+OCR accuracy was measured by comparing `Output/` (raw extraction) with `Output_final/` (manually corrected values):
+
+| Table | Compared cells | Equal cells | Match rate |
+|-------|----------------|-------------|------------|
+| S.02.01.02 | 1,162 | 999 | 85.97% |
+| S.23.01.01 | 448 | 351 | 78.35% |
+| S.25.01.21 | 96 | 81 | 84.38% |
+| **Overall** | **1,706** | **1,431** | **83.88%** |
+
+These figures reflect exact numeric equality after parsing. Manual corrections in `Output_final/` fix OCR errors and formatting differences before the cross-validation step.
 
 ## Companies in Scope
 
