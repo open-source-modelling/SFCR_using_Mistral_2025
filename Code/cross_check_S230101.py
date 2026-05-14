@@ -35,6 +35,7 @@ def _compare(
     test_name: str,
     diag_index: list[str] | None = None,
 ) -> tuple[bool, pd.DataFrame | None, float]:
+    """Compare one row to a signed sum of other rows for a single company column."""
     lhs = data.loc[lhs_row, col]
     signs = rhs_signs if rhs_signs is not None else [1] * len(rhs_rows)
     rhs = sum(sign * data.loc[row, col] for row, sign in zip(rhs_rows, signs))
@@ -59,6 +60,7 @@ def _compare_division(
     test_name: str,
     diag_index: list[str] | None = None,
 ) -> tuple[bool, pd.DataFrame | None, float]:
+    """Compare one row to ``100 * dividend / divisor`` for a single company column."""
     lhs = data.loc[lhs_row, col]
     divisor = data.loc[divisor_row, col]
     dividend = data.loc[dividend_row, col]
@@ -78,16 +80,19 @@ def _compare_division(
 
 
 def check_23_01_01_1(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_1: R0290 = R0010 + R0030 + R0130 + R0140 + R0160."""
     return _compare(data, eps, col, "R0290", ["R0010", "R0030", "R0130", "R0140", "R0160"], None, "TEST_1")
 
 
 def check_23_01_01_2(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_2: R0620 = R0540 / R0580."""
     return _compare_division(
         data, eps, col, "R0620", "R0580", "R0540", "TEST_2"
     )
 
 
 def check_23_01_01_3(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_3: R0640 = R0550 / R0600."""
     return _compare_division(
         data,
         eps,
@@ -100,6 +105,7 @@ def check_23_01_01_3(data: pd.DataFrame, eps: float, col: str):
 
 
 def check_23_01_01_4(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_4: R0290 = R0500."""
     return _compare(data, eps, col, "R0290", ["R0500"], None, "TEST_4")
 
 
@@ -117,6 +123,7 @@ def run_check_diagnostics(
     col_name: str,
     eps: float,
 ) -> pd.DataFrame:
+    """Run one check function across all company columns and return pass/fail flags."""
     results = pd.DataFrame(data=[], columns=["COMPANY_NAME", col_name])
     for col in table.columns:
         res, _, _ = function(table, eps=eps, col=col)
@@ -131,6 +138,7 @@ def build_overall_summary(
     eps_sum: float,
     eps_div: float,
 ) -> pd.DataFrame:
+    """Build a tests-by-companies matrix using summation or division tolerances."""
     data: dict[str, dict[str, str | bool]] = {}
     for test_name, check_fn, is_division in CHECK_FUNCTIONS:
         eps_to_use = eps_div if is_division else eps_sum
@@ -147,12 +155,14 @@ def build_overall_summary(
 
 
 def ensure_validation_dir(project_dir: Path) -> Path:
+    """Create and return the project ``Validation/`` directory."""
     validation_dir = project_dir / "Validation"
     validation_dir.mkdir(parents=True, exist_ok=True)
     return validation_dir
 
 
 def save_validation_summary(summary: pd.DataFrame, project_dir: Path) -> Path:
+    """Write the S.23.01.01 validation summary CSV and return its path."""
     validation_dir = ensure_validation_dir(project_dir)
     out_path = validation_dir / "validation_summary_S230101.csv"
     summary.to_csv(out_path)
@@ -160,12 +170,14 @@ def save_validation_summary(summary: pd.DataFrame, project_dir: Path) -> Path:
 
 
 def sanitize_filename(value: str) -> str:
+    """Replace unsafe filename characters with underscores."""
     return "".join(
         ch if ch.isalnum() or ch in {"-", "_"} else "_" for ch in str(value)
     ).strip("_")
 
 
 def save_failure_diagnostics(failures: list[dict], project_dir: Path) -> list[Path]:
+    """Persist per-company diagnostic CSV files for failed checks."""
     validation_dir = ensure_validation_dir(project_dir)
     output_paths: list[Path] = []
     for failure in failures:
@@ -183,6 +195,7 @@ def collect_failure_details(
     eps_sum: float,
     eps_div: float,
 ) -> list[dict]:
+    """Collect structured failure records for every company and failed test."""
     failures: list[dict] = []
     for company in table.columns:
         for test_name, check_fn, is_division in CHECK_FUNCTIONS:
@@ -202,10 +215,12 @@ def collect_failure_details(
 
 
 def load_table(path: Path) -> pd.DataFrame:
+    """Load an aggregated SFCR table CSV with row codes as the index."""
     return pd.read_csv(path, header=0, index_col=0, decimal=".", thousands=",")
 
 
 def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
+    """Resolve the input CSV from ``--input`` or the default ``Output_final`` path."""
     if input_arg:
         candidate = Path(input_arg)
         if not candidate.is_absolute():
@@ -224,6 +239,7 @@ def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
 
 
 def print_failure_report(failures: list[dict]) -> None:
+    """Print a human-readable report for all failed checks."""
     if not failures:
         print("\nAll checks passed for every company.")
         return
@@ -240,6 +256,7 @@ def print_failure_report(failures: list[dict]) -> None:
 
 
 def main() -> int:
+    """CLI entry point for S.23.01.01 cross-validation."""
     parser = argparse.ArgumentParser(
         description="Cross-validate S.23.01.01 Italian SFCR table consistency."
     )

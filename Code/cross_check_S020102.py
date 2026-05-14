@@ -47,6 +47,7 @@ def _compare(
     test_name: str,
     diag_index: list[str] | None = None,
 ) -> tuple[bool, pd.DataFrame | None, float]:
+    """Compare one row to a signed sum of other rows for a single company column."""
     lhs = data.loc[lhs_row, col]
     signs = rhs_signs if rhs_signs is not None else [1] * len(rhs_rows)
     rhs = sum(sign * data.loc[row, col] for row, sign in zip(rhs_rows, signs))
@@ -61,16 +62,19 @@ def _compare(
 
 
 def check_02_01_02_1(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_1: R0100 = R0110 + R0120."""
     return _compare(data, eps, col, "R0100", ["R0110", "R0120"], None, "TEST_1")
 
 
 def check_02_01_02_2(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_2: R0130 = R0140 + R0150 + R0160 + R0170."""
     return _compare(
         data, eps, col, "R0130", ["R0140", "R0150", "R0160", "R0170"], None, "TEST_2"
     )
 
 
 def check_02_01_02_3(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_3: R0070 equals the sum of investment sub-rows R0080 through R0210."""
     return _compare(
         data,
         eps,
@@ -83,22 +87,27 @@ def check_02_01_02_3(data: pd.DataFrame, eps: float, col: str):
 
 
 def check_02_01_02_4(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_4: R0230 = R0240 + R0250 + R0260."""
     return _compare(data, eps, col, "R0230", ["R0240", "R0250", "R0260"], None, "TEST_4")
 
 
 def check_02_01_02_5(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_5: R0270 = R0280 + R0310 + R0340."""
     return _compare(data, eps, col, "R0270", ["R0280", "R0310", "R0340"], None, "TEST_5")
 
 
 def check_02_01_02_6(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_6: R0310 = R0320 + R0330."""
     return _compare(data, eps, col, "R0310", ["R0320", "R0330"], None, "TEST_6")
 
 
 def check_02_01_02_7(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_7: R0280 = R0290 + R0300."""
     return _compare(data, eps, col, "R0280", ["R0290", "R0300"], None, "TEST_7")
 
 
 def check_02_01_02_8(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_8: R0500 equals the sum of selected asset rows."""
     return _compare(
         data,
         eps,
@@ -128,38 +137,47 @@ def check_02_01_02_8(data: pd.DataFrame, eps: float, col: str):
 
 
 def check_02_01_02_9(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_9: R0510 = R0520 + R0560."""
     return _compare(data, eps, col, "R0510", ["R0520", "R0560"], None, "TEST_9")
 
 
 def check_02_01_02_10(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_10: R0520 = R0530 + R0540 + R0550."""
     return _compare(data, eps, col, "R0520", ["R0530", "R0540", "R0550"], None, "TEST_10")
 
 
 def check_02_01_02_11(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_11: R0560 = R0570 + R0580 + R0590."""
     return _compare(data, eps, col, "R0560", ["R0570", "R0580", "R0590"], None, "TEST_11")
 
 
 def check_02_01_02_12(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_12: R0600 = R0610 + R0650."""
     return _compare(data, eps, col, "R0600", ["R0610", "R0650"], None, "TEST_12")
 
 
 def check_02_01_02_13(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_13: R0610 = R0620 + R0630 + R0640."""
     return _compare(data, eps, col, "R0610", ["R0620", "R0630", "R0640"], None, "TEST_13")
 
 
 def check_02_01_02_14(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_14: R0650 = R0660 + R0670 + R0680."""
     return _compare(data, eps, col, "R0650", ["R0660", "R0670", "R0680"], None, "TEST_14")
 
 
 def check_02_01_02_15(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_15: R0690 = R0700 + R0710 + R0720."""
     return _compare(data, eps, col, "R0690", ["R0700", "R0710", "R0720"], None, "TEST_15")
 
 
 def check_02_01_02_16(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_16: R0850 = R0860 + R0870."""
     return _compare(data, eps, col, "R0850", ["R0860", "R0870"], None, "TEST_16")
 
 
 def check_02_01_02_17(data: pd.DataFrame, eps: float, col: str):
+    """Run TEST_17: R1000 = R0500 - R0900."""
     return _compare(
         data,
         eps,
@@ -199,6 +217,7 @@ def run_check_diagnostics(
     col_name: str,
     eps: float,
 ) -> pd.DataFrame:
+    """Run one check function across all company columns and return pass/fail flags."""
     results = pd.DataFrame(data=[], columns=["COMPANY_NAME", col_name])
     for col in table.columns:
         res, _, _ = function(table, eps=eps, col=col)
@@ -209,6 +228,7 @@ def run_check_diagnostics(
 
 
 def build_overall_summary(table: pd.DataFrame, eps: float) -> pd.DataFrame:
+    """Build a tests-by-companies matrix with empty cells for passes and ``False`` for failures."""
     data: dict[str, dict[str, str | bool]] = {}
     for test_name, check_fn in CHECK_FUNCTIONS:
         results: dict[str, str | bool] = {}
@@ -224,12 +244,14 @@ def build_overall_summary(table: pd.DataFrame, eps: float) -> pd.DataFrame:
 
 
 def ensure_validation_dir(project_dir: Path) -> Path:
+    """Create and return the project ``Validation/`` directory."""
     validation_dir = project_dir / "Validation"
     validation_dir.mkdir(parents=True, exist_ok=True)
     return validation_dir
 
 
 def save_validation_summary(summary: pd.DataFrame, project_dir: Path) -> Path:
+    """Write the S.02.01.02 validation summary CSV and return its path."""
     validation_dir = ensure_validation_dir(project_dir)
     out_path = validation_dir / "validation_summary_S020102.csv"
     summary.to_csv(out_path)
@@ -237,12 +259,14 @@ def save_validation_summary(summary: pd.DataFrame, project_dir: Path) -> Path:
 
 
 def sanitize_filename(value: str) -> str:
+    """Replace unsafe filename characters with underscores."""
     return "".join(
         ch if ch.isalnum() or ch in {"-", "_"} else "_" for ch in str(value)
     ).strip("_")
 
 
 def save_failure_diagnostics(failures: list[dict], project_dir: Path) -> list[Path]:
+    """Persist per-company diagnostic CSV files for failed checks."""
     validation_dir = ensure_validation_dir(project_dir)
     output_paths: list[Path] = []
     for failure in failures:
@@ -259,6 +283,7 @@ def collect_failure_details(
     table: pd.DataFrame,
     eps: float,
 ) -> list[dict]:
+    """Collect structured failure records for every company and failed test."""
     failures: list[dict] = []
     for company in table.columns:
         for test_name, check_fn in CHECK_FUNCTIONS:
@@ -277,10 +302,12 @@ def collect_failure_details(
 
 
 def load_table(path: Path) -> pd.DataFrame:
+    """Load an aggregated SFCR table CSV with row codes as the index."""
     return pd.read_csv(path, header=0, index_col=0, decimal=".", thousands=",")
 
 
 def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
+    """Resolve the input CSV from ``--input`` or known project fallback locations."""
     if input_arg:
         candidate = Path(input_arg)
         if not candidate.is_absolute():
@@ -305,6 +332,7 @@ def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
 
 
 def print_failure_report(failures: list[dict]) -> None:
+    """Print a human-readable report for all failed checks."""
     if not failures:
         print("\nAll checks passed for every company.")
         return
@@ -321,6 +349,7 @@ def print_failure_report(failures: list[dict]) -> None:
 
 
 def main() -> int:
+    """CLI entry point for S.02.01.02 cross-validation."""
     parser = argparse.ArgumentParser(
         description="Cross-validate S.02.01.02 Italian SFCR table consistency."
     )
