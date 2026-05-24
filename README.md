@@ -133,7 +133,7 @@ MIT license
 [Cardif Vita S.p.A.]:https://bnpparibascardif.it/notizie-e-comunicati/
 [MEDIOLANUM VITA S.p.A.]:https://www.mediolanumassicurazioni.it/relazione-solvibilita-condizione-finanziaria
 [Generali Italia S.p.A.]:https://www.generali.it/note-legali
-[Banco BPM Vita S.p.A.]:https://www.bancobpmvita.it/dati-societari/
+[Banco BPM Vita S.p.A.]:https://www.bancobpmvita.it/chi-siamo/dati-societari/
 [HDI ASSICURAZIONI S.p.A.]:https://www.hdiassicurazioni.it/it/comunicazioni-e-avvisi/assicurazioni-hdi-informativa-mercato
 [Gruppo Assicurativo Poste Vita]:https://postevita.poste.it/dati-di-bilancio-di-poste-vita/
 [FIDEURAM VITA S.P.A.]:https://www.fideuramvita.it/solvency-2
