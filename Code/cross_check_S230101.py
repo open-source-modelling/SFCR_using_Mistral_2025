@@ -106,7 +106,7 @@ def check_23_01_01_3(data: pd.DataFrame, eps: float, col: str):
 
 def check_23_01_01_4(data: pd.DataFrame, eps: float, col: str):
     """Run TEST_4: R0290 = R0500."""
-    return _compare(data, eps, col, "R0290", ["R0500"], None, "TEST_4")
+    return _compare(data, eps, col, "R0500", ["R0290", "R0400"], None, "TEST_4")
 
 
 CHECK_FUNCTIONS: list[tuple[str, Callable, bool]] = [
