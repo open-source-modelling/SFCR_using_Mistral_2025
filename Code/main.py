@@ -54,9 +54,9 @@ def main():
         index_col=0,
     )
 
-    company_list = master_list.loc[:, "company"].unique().flatten()
+    company_list = np.asarray(master_list.loc[:, "company"].unique())
     print("✓ Unique companies inside the list identified")
-    table_list = master_list.loc[:, "table_category"].unique().flatten()
+    table_list = np.asarray(master_list.loc[:, "table_category"].unique())
     print("✓ Unique tables inside the list identified")
 
     table_runners = {

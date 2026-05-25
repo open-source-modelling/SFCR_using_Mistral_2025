@@ -4,9 +4,10 @@ import json
 import base64
 import pandas as pd
 from pathlib import Path
-from mistralai import Mistral
+from mistralai.client import Mistral
 from pydantic import BaseModel
 from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2.errors import DependencyError
 from typing import Sequence, Type, List, Union
 from mistralai.extra import response_format_from_pydantic_model
 
@@ -58,10 +59,15 @@ def extract_page(input_pdf_path: str, output_pdf_path: str, page_number: int, pa
     pdf_writer = PdfWriter()
 
     if pdf_reader.is_encrypted:
-        if password:
-            pdf_reader.decrypt(password)
-        else:
-            pdf_reader.decrypt("")
+        try:
+            if password:
+                pdf_reader.decrypt(password)
+            else:
+                pdf_reader.decrypt("")
+        except DependencyError as exc:
+            raise RuntimeError(
+                "PDF AES decryption requires PyCryptodome. Install it with `pip install pycryptodome`."
+            ) from exc
 
     pdf_writer.add_page(pdf_reader.pages[page_number - 1])
 
