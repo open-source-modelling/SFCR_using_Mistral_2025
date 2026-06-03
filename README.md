@@ -129,7 +129,7 @@ MIT license
 [Credemvita S.p.A.]:https://www.credemvita.it/content/credemvita/it/home/investor-relations.html
 [AXA MPS Assicurazioni Vita]:https://corporate.axa.it/
 [CRÈDIT AGRICOLE VITA]:https://www.ca-vita.it/bilanci-e-sfcr
-[Società Reale Mutua di Assicurazioni]:https://www.realegroup.eu/EN/corporate/reports-and-financial-statements
+[Società Reale Mutua di Assicurazioni]:https://www.realegroup.eu/IT/corporate/relazioni-e-bilanci
 [Cardif Vita S.p.A.]:https://bnpparibascardif.it/notizie-e-comunicati/
 [MEDIOLANUM VITA S.p.A.]:https://www.mediolanumassicurazioni.it/relazione-solvibilita-condizione-finanziaria
 [Generali Italia S.p.A.]:https://www.generali.it/note-legali
