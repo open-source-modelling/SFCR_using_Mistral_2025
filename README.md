@@ -119,6 +119,7 @@ These figures reflect exact numeric equality after parsing. Manual corrections i
  - [UniCredit Life Insurance S.p.A.]
  - [Athora Italia S.p.A.]
  - [Nobis Vita S.p.A.]
+ - [BCC Vita S.p.A.]
 
 ## Contact
 A version of this process is used by us to extract data for our actuarial models. One of the benefits of releasing our code is the feedback and improvement ideas. If you have any, you can contact us at gregor@osmodelling.com.
@@ -147,3 +148,4 @@ MIT license
 [UniCredit Life Insurance S.p.A.]:https://www.unicreditlife.it/chisiamo/solvency
 [Athora Italia S.p.A.]:https://www.athora.it/chi-siamo/documenti-societari/
 [Nobis Vita S.p.A.]:https://corporate.axa.it/
+[BCC Vita S.p.A.]:https://bccvita.it/relazione-sulla-solvibilita-e-condizione-finanziaria-2025/
