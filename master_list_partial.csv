@@ -1,4 +1,4 @@
-﻿id,type,company,document_name,table_name,page_number,table_category
+id,type,company,document_name,table_name,page_number,table_category
 AXA_VITA_02_01,B,AXA,Fascicolo AMAV_SFCR_31122025_SITO.pdf,S_02_01_02,98,S_02_01_02
 GEN_ITA_02_01,A_ITA,GENERALI ITALIA,2025 Relazione sulla Solvibilita e Condizione Finanziaria Generali Italia.pdf,S_02_01_02_A,142,S_02_01_02
 GEN_ITA_02_02,L_ITA,GENERALI ITALIA,2025 Relazione sulla Solvibilita e Condizione Finanziaria Generali Italia.pdf,S_02_01_02_L,143,S_02_01_02
@@ -13,16 +13,32 @@ CREDEM_VITA_02_2,L,CREDEM_VITA,SFCR al 31 Dicembre 2025.pdf,S_02_01_02_L,173,S_0
 CARDIF_02_01,B,CARDIF,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025.pdf,S_02_01_02_A,113,S_02_01_02
 HELVETIA_VITA_01,A,HELVETIA_VITA,SFCR-Annex_Helvetia Vita_2025.pdf,S_02_01_02_A,2,S_02_01_02
 HELVETIA_VITA_02,L,HELVETIA_VITA,SFCR-Annex_Helvetia Vita_2025.pdf,S_02_01_02_L,3,S_02_01_02
-BMP_VITA_02_01,A,BMP VITA,SFCR_BBPMV_202512311.pdf,S_02_01_02_A,92,S_02_01_02
-BMP_VITA_02_02,L,BMP VITA,SFCR_BBPMV_202512311.pdf,S_02_01_02_L,93,S_02_01_02
+BMP_VITA_02_01,A,BMP VITA,Banco-BPM-Vita-Relazione-relativa-alla-solvibilita-e-alla-condizione-finanziaria-2025.pdf,S_02_01_02_A,92,S_02_01_02
+BMP_VITA_02_02,L,BMP VITA,Banco-BPM-Vita-Relazione-relativa-alla-solvibilita-e-alla-condizione-finanziaria-2025.pdf,S_02_01_02_L,93,S_02_01_02
 UNICREDIT_VITA_02_01,A,UNICREDIT VITA,57185-Relazione relativa alla solvibilità e condizione finanziaria SFCR 2025.pdf,S_02_01_02_A,106,S_02_01_02
 UNICREDIT_VITA_02_02,L,UNICREDIT VITA,57185-Relazione relativa alla solvibilità e condizione finanziaria SFCR 2025.pdf,S_02_01_02_L,107,S_02_01_02
 CNP_VITA_02_01,A,CNP_VITA,SFCR_CNP_Vita_Assicura_2025.pdf,S_02_01_02_A,140,S_02_01_02
 CNP_VITA_02_02,L,CNP_VITA,SFCR_CNP_Vita_Assicura_2025.pdf,S_02_01_02_L,141,S_02_01_02
 ALLIANZ_UNICREDIT_02_01,A_ITA,ALLIANZ_UNICREDIT,57265-Relazione_relativa_alla_solvibilita_e_condizione_finanziaria_SFCR_2025_UniCredit_Vita_Assicurazioni.pdf,S_02_01_02_A,107,S_02_01_02
 ALLIANZ_UNICREDIT_02_02,L_ITA,ALLIANZ_UNICREDIT,57265-Relazione_relativa_alla_solvibilita_e_condizione_finanziaria_SFCR_2025_UniCredit_Vita_Assicurazioni.pdf,S_02_01_02_L,108,S_02_01_02
-ATHORA_02_01,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web_260423_235512.pdf,S_02_01_02_A,148,S_02_01_02
+ATHORA_02_01,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web.pdf,S_02_01_02_A,148,S_02_01_02
 NOBIS_02_01,B,NOBIS_VITA,Template_Attachment_SFCR_v1_NOBISVI_DONE.pdf,S_02_01_02,1,S_02_01_02
+MEDIO_02_01,A,MEDIOLANUM,Relazione_SFCR_2025.pdf,S_02_01_02_A,173,S_02_01_02
+MEDIO_02_02,L,MEDIOLANUM,Relazione_SFCR_2025.pdf,S_02_01_02_L,174,S_02_01_02
+POSTE_VITA_02_01,A,POSTE_VITA,Relazione-Unica-sulla-Solvibilita-e-Condizione-Finanziaria-del-Gruppo-Poste-Vita-al-31-Dicembre-2025.pdf,S_02_01_02_A,146,S_02_01_02
+POSTE_VITA_02_02,L,POSTE_VITA,Relazione-Unica-sulla-Solvibilita-e-Condizione-Finanziaria-del-Gruppo-Poste-Vita-al-31-Dicembre-2025.pdf,S_02_01_02_L,147,S_02_01_02
+QRT_INTESA_ASSICURAZIONI_02_01,A_ITA,QRT_INTESA_VITA,SFCR Gruppo ISPA 2025.pdf,S_02_01_02_A,247,S_02_01_02
+QRT_INTESA_ASSICURAZIONI_02_02,L_ITA,QRT_INTESA_VITA,SFCR Gruppo ISPA 2025.pdf,S_02_01_02_L,248,S_02_01_02
+QRT_FIDEURAM_VITA_02_01,A_ITA,QRT_FIDEURAM_VITA,SFCR Gruppo ISPA 2025.pdf,S_02_01_02_A,273,S_02_01_02
+QRT_FIDEURAM_VITA_02_02,L_ITA,QRT_FIDEURAM_VITA,SFCR Gruppo ISPA 2025.pdf,S_02_01_02_L,274,S_02_01_02
+ITAS_VITA_02_01,A_ITA,ITAS_VITA,SFCR_G0010_20251231.pdf,S_02_01_02_A,234,S_02_01_02
+ITAS_VITA_02_02,L_ITA,ITAS_VITA,SFCR_G0010_20251231.pdf,S_02_01_02_L,235,S_02_01_02
+GROUPAMA_02_01,A_ITA,GROUPAMA,SFCR-2025-Relazione-solvibilita-condizione-finanziaria-Groupama-Assicurazioni.pdf,S_02_01_02_A,94,S_02_01_02
+GROUPAMA_02_02,L_ITA,GROUPAMA,SFCR-2025-Relazione-solvibilita-condizione-finanziaria-Groupama-Assicurazioni.pdf,S_02_01_02_L,95,S_02_01_02
+REALE_MUTUA_02_01,A,REALE_MUTUA,SFCR_G123M_20251231.pdf,S_02_01_02_A,162,S_02_01_02
+REALE_MUTUA_02_02,L,REALE_MUTUA,SFCR_G123M_20251231.pdf,S_02_01_02_L,163,S_02_01_02
+BCC_VITA_02_01,A,BBC_VITA,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025_BCC_Vita.pdf,S_02_01_02_A,114,S_02_01_02
+BCC_VITA_02_02,L,BBC_VITA,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025_BCC_Vita.pdf,S_02_01_02_L,115,S_02_01_02
 AXA_VITA_23_01,B,AXA,Fascicolo AMAV_SFCR_31122025_SITO.pdf,S_23_01_01,103,S_23_01_01
 GEN_ITA_23_01,B_ITA,GENERALI ITALIA,2025 Relazione sulla Solvibilita e Condizione Finanziaria Generali Italia.pdf,S_23_01_01,162,S_23_01_01
 HDI_23_01,B,HDI,SFCR2025EN.pdf,S_23_01_01,108,S_23_01_01
@@ -34,23 +50,39 @@ CREDEM_VITA_23_01_01,A,CREDEM_VITA,SFCR al 31 Dicembre 2025.pdf,S_23_01_01_1,178
 CREDEM_VITA_23_01_02,L,CREDEM_VITA,SFCR al 31 Dicembre 2025.pdf,S_23_01_01_2,179,S_23_01_01
 CARDIF_23_01_01,B,CARDIF,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025.pdf,S_23_01_01,121,S_23_01_01
 HELVETIA_VITA_23_01_01,B,HELVETIA_VITA,SFCR-Annex_Helvetia Vita_2025.pdf,S_23_01_01,8,S_23_01_01
-BMP_VITA_23_01_01,B,BMP VITA,SFCR_BBPMV_202512311.pdf,S_23_01_01,100,S_23_01_01
+BMP_VITA_23_01_01,B,BMP VITA,Banco-BPM-Vita-Relazione-relativa-alla-solvibilita-e-alla-condizione-finanziaria-2025.pdf,S_23_01_01,100,S_23_01_01
 UNICREDIT_VITA_23_01_01,A_ITA,UNICREDIT VITA,57185-Relazione relativa alla solvibilità e condizione finanziaria SFCR 2025.pdf,S_23_01_01_1,111,S_23_01_01
 UNICREDIT_VITA_23_01_02,L_ITA,UNICREDIT VITA,57185-Relazione relativa alla solvibilità e condizione finanziaria SFCR 2025.pdf,S_23_01_01_2,112,S_23_01_01
 CNP_VITA_23_01_01,A,CNP_VITA,SFCR_CNP_Vita_Assicura_2025.pdf,S_23_01_01_1,145,S_23_01_01
 CNP_VITA_23_01_02,L,CNP_VITA,SFCR_CNP_Vita_Assicura_2025.pdf,S_23_01_01_2,146,S_23_01_01
 ALLIANZ_UNICREDIT_23_01_01,B_ITA,ALLIANZ_UNICREDIT,57265-Relazione_relativa_alla_solvibilita_e_condizione_finanziaria_SFCR_2025_UniCredit_Vita_Assicurazioni.pdf,S_23_01_01,115,S_23_01_01
-ATHORA_23_01_01,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web_260423_235512.pdf,S_23_01_01,152,S_23_01_01
+ATHORA_23_01_01,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web.pdf,S_23_01_01,152,S_23_01_01
 NOBIS_23_01_01,B,NOBIS_VITA,Template_Attachment_SFCR_v1_NOBISVI_DONE.pdf,S_23_01_01,5,S_23_01_01
+MEDIO_23_01_01,B,MEDIOLANUM,Relazione_SFCR_2025.pdf,S_23_01_01,178,S_23_01_01
+POSTE_VITA_23_01,B,POSTE_VITA,Relazione-Unica-sulla-Solvibilita-e-Condizione-Finanziaria-del-Gruppo-Poste-Vita-al-31-Dicembre-2025.pdf,S_23_01_01,153,S_23_01_01
+QRT_INTESA_ASSICURAZIONI_23_01,B_ITA,QRT_INTESA_VITA,SFCR Gruppo ISPA 2025.pdf,S_23_01_01,256,S_23_01_01
+QRT_FIDEURAM_VITA_23_01,B_ITA,QRT_FIDEURAM_VITA,SFCR Gruppo ISPA 2025.pdf,S_23_01_01,279,S_23_01_01
+ITAS_VITA_23_01_01,A_ITA,ITAS_VITA,SFCR_G0010_20251231.pdf,S_23_01_01_1,241,S_23_01_01
+ITAS_VITA_23_01_02,L_ITA,ITAS_VITA,SFCR_G0010_20251231.pdf,S_23_01_01_2,242,S_23_01_01
+GROUPAMA_23_01_01,A_ITA,GROUPAMA,SFCR-2025-Relazione-solvibilita-condizione-finanziaria-Groupama-Assicurazioni.pdf,S_23_01_01_1,103,S_23_01_01
+GROUPAMA_23_01_02,L_ITA,GROUPAMA,SFCR-2025-Relazione-solvibilita-condizione-finanziaria-Groupama-Assicurazioni.pdf,S_23_01_01_2,104,S_23_01_01
+BCC_VITA_23_01,B,BCC_VITA,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025_BCC_Vita.pdf,S_23_01_01,119,S_23_01_01
 HDI_25_01,B,HDI,SFCR2025EN.pdf,S_25_01_21,109,S_25_01_21
 UNICREDIT_VITA_25_01,B_ITA,UNICREDIT VITA,57185-Relazione relativa alla solvibilità e condizione finanziaria SFCR 2025.pdf,S_25_01_21,113,S_25_01_21
-ATHORA_25_01_21,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web_260423_235512.pdf,S_25_01_21,153,S_25_01_21
+ATHORA_25_01_21,B_ITA,ATHORA,SFCR_2025_Athoraitalia_web.pdf,S_25_01_21,153,S_25_01_21
 ALLIANZ_UNICREDIT_25_01_21,B_ITA,ALLIANZ_UNICREDIT,57265-Relazione_relativa_alla_solvibilita_e_condizione_finanziaria_SFCR_2025_UniCredit_Vita_Assicurazioni.pdf,S_25_01_21,116,S_25_01_21
 CNP_VITA_25_01_21,B,CNP_VITA,SFCR_CNP_Vita_Assicura_2025.pdf,S_25_01_21,147,S_25_01_21
-BMP_VITA_25_01_21,B,BMP VITA,SFCR_BBPMV_202512311.pdf,S_25_01_21,101,S_25_01_21
+BMP_VITA_25_01_21,B,BMP VITA,Banco-BPM-Vita-Relazione-relativa-alla-solvibilita-e-alla-condizione-finanziaria-2025.pdf,S_25_01_21,101,S_25_01_21
 HELVETIA_VITA_25_01_21,B,HELVETIA_VITA,SFCR-Annex_Helvetia Vita_2025.pdf,S_25_01_21,10,S_25_01_21
 CARDIF_25_01_21,B,CARDIF,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025.pdf,S_25_01_21,122,S_25_01_21
 CREDEM_VITA_25_01_21,B,CREDEM_VITA,SFCR al 31 Dicembre 2025.pdf,S_25_01_21,180,S_25_01_21
 CREDAG_VITA_25_01_21,B_ITA,CREDIT_AGRICOLE,sfcr-2025_ca-vita.pdf,S_25_01_21,72,S_25_01_21
 ZURICH_LIFE_25_01_21,B_ITA,ZURICH_LIFE,zil_sfcr_2025_web.pdf,S_25_01_21,69,S_25_01_21
 NOBIS_25_01_21,B,NOBIS_VITA,Template_Attachment_SFCR_v1_NOBISVI_DONE.pdf,S_25_01_21,6,S_25_01_21
+MEDIO_25_01_21,B,MEDIOLANUM,Relazione_SFCR_2025.pdf,S_25_01_21,179,S_25_01_21
+POSTE_VITA_25_01_21,B,POSTE_VITA,Relazione-Unica-sulla-Solvibilita-e-Condizione-Finanziaria-del-Gruppo-Poste-Vita-al-31-Dicembre-2025.pdf,S_25_01_21,154,S_25_01_21
+QRT_INTESA_ASSICURAZIONI_25_01_21,B_ITA,QRT_INTESA_VITA,SFCR Gruppo ISPA 2025.pdf,S_25_01_21,257,S_25_01_21
+QRT_FIDEURAM_VITA_25_01_21,B_ITA,QRT_FIDEURAM_VITA,SFCR Gruppo ISPA 2025.pdf,S_25_01_21,280,S_25_01_21
+ITAS_VITA_25_01_21,B_ITA,ITAS_VITA,SFCR_G0010_20251231.pdf,S_25_01_21,244,S_25_01_21
+GROUPAMA_25_01_21,B_ITA,GROUPAMA,SFCR-2025-Relazione-solvibilita-condizione-finanziaria-Groupama-Assicurazioni.pdf,S_25_01_21,105,S_25_01_21
+BCC_VITA_25_01_21,B,BCC_VITA,Relazione-sulla-Solvibilita-e-Condizione-Finanziaria-2025_BCC_Vita.pdf,S_25_01_21,120,S_25_01_21
