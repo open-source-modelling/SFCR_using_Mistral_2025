@@ -160,7 +160,7 @@ def load_table(path: Path) -> pd.DataFrame:
 
 
 def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
-    """Resolve the input CSV from ``--input`` or the default ``Output_final`` path."""
+    """Resolve the input CSV from ``--input`` or known project fallback locations."""
     if input_arg:
         candidate = Path(input_arg)
         if not candidate.is_absolute():
@@ -169,12 +169,16 @@ def resolve_input_path(project_dir: Path, input_arg: str | None) -> Path:
             raise FileNotFoundError(f"Input file not found: {candidate}")
         return candidate
 
-    candidate = project_dir / DEFAULT_INPUT
-    if candidate.exists():
-        return candidate
+    fallbacks = [
+        project_dir / DEFAULT_INPUT,
+        project_dir / "Final_output/S250121_final.csv",
+    ]
+    for path in fallbacks:
+        if path.exists():
+            return path
     raise FileNotFoundError(
         "No input table found. Pass --input or place data at "
-        f"{candidate}"
+        f"{project_dir / DEFAULT_INPUT}"
     )
 
 
