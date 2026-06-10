@@ -10,6 +10,34 @@ Current table categories processed by `main.py`:
 
 The original implementation was developed in Jupyter Notebook and is being incrementally refactored into a modular Python codebase. Core Python source files are organized under `Code/`.
 
+## Companies in Scope
+
+ - [Credemvita S.p.A.]
+ - [AXA MPS Assicurazioni Vita]
+ - [CRÈDIT AGRICOLE VITA]
+ - [Società Reale Mutua di Assicurazioni]
+ - [Cardif Vita S.p.A.]
+ - [MEDIOLANUM VITA S.p.A.]
+ - [Generali Italia S.p.A.]
+ - [Banco BPM Vita S.p.A.]
+ - [HDI ASSICURAZIONI S.p.A.]
+ - [Gruppo Assicurativo Poste Vita]
+ - [FIDEURAM VITA S.P.A.]
+ - [CNP Vita Assicura S.p.A.]
+ - [ITAS VITA]
+ - [Helvetia Vita S.p.A.]
+ - [Vittoria Assicurazioni S.p.A.]
+ - [GROUPAMA ASSICURAZIONI S.P.A.]
+ - [UniCredit Allianz Vita S.p.A.]
+ - [Zurich Investments Life S.p.A.]
+ - [UniCredit Life Insurance S.p.A.]
+ - [Athora Italia S.p.A.]
+ - [Nobis Vita S.p.A.]
+ - [BCC Vita S.p.A.]
+
+
+
+
 ## Pipeline
 
 | Phase | What happens | Folder / script |
@@ -96,30 +124,6 @@ OCR accuracy was measured by comparing `Output/` (raw extraction) with `Output_f
 
 These figures reflect exact numeric equality after parsing. Manual corrections in `Output_final/` fix OCR errors and formatting differences before the cross-validation step.
 
-## Companies in Scope
-
- - [Credemvita S.p.A.]
- - [AXA MPS Assicurazioni Vita]
- - [CRÈDIT AGRICOLE VITA]
- - [Società Reale Mutua di Assicurazioni]
- - [Cardif Vita S.p.A.]
- - [MEDIOLANUM VITA S.p.A.]
- - [Generali Italia S.p.A.]
- - [Banco BPM Vita S.p.A.]
- - [HDI ASSICURAZIONI S.p.A.]
- - [Gruppo Assicurativo Poste Vita]
- - [FIDEURAM VITA S.P.A.]
- - [CNP Vita Assicura S.p.A.]
- - [ITAS VITA]
- - [Helvetia Vita S.p.A.]
- - [Vittoria Assicurazioni S.p.A.]
- - [GROUPAMA ASSICURAZIONI S.P.A.]
- - [UniCredit Allianz Vita S.p.A.]
- - [Zurich Investments Life S.p.A.]
- - [UniCredit Life Insurance S.p.A.]
- - [Athora Italia S.p.A.]
- - [Nobis Vita S.p.A.]
- - [BCC Vita S.p.A.]
 
 ## Contact
 A version of this process is used by us to extract data for our actuarial models. One of the benefits of releasing our code is the feedback and improvement ideas. If you have any, you can contact us at gregor@osmodelling.com.
